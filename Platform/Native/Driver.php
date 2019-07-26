@@ -43,7 +43,7 @@ class Driver implements DriverInterface
             throw new ConnectionException('Cannot support both TLS & SSL for a given Ldap Connection');
         }
 
-        if (! extension_loaded('ldap') && ! @dl('ldap.' . PHP_SHLIB_SUFFIX)) {
+        if (! extension_loaded('ldap')) {
             throw new ConnectionException(
                 'You do not have the required ldap-extension installed'
             );
